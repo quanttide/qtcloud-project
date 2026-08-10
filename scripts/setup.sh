@@ -10,7 +10,7 @@
 # 凭证：优先使用环境变量 ALICLOUD_ACCESS_KEY / ALICLOUD_SECRET_KEY，
 #       未设置时读取 ~/.aliyun/config.json 的 default profile。
 #
-# 用法：bash infra/setup.sh
+# 用法：bash scripts/setup.sh
 set -euo pipefail
 
 BUCKET="qtcloud-project-studio"

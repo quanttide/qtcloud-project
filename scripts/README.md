@@ -14,7 +14,7 @@
 
 ```bash
 # 幂等创建/补齐所有资源
-bash infra/setup.sh
+bash scripts/setup.sh
 ```
 
 依赖：`aliyun` CLI（3.x）、`ossutil`（1.7.x）、`jq`。
