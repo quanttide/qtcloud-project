@@ -20,14 +20,20 @@ bash infra/setup.sh
 依赖：`aliyun` CLI（3.x）、`ossutil`（1.7.x）、`jq`。
 凭证：优先使用环境变量 `ALICLOUD_ACCESS_KEY` / `ALICLOUD_SECRET_KEY`，否则读取 `~/.aliyun/config.json` 的 default profile。
 
-## HTTPS 证书（后续步骤）
+## HTTPS 证书（Let's Encrypt，已签发绑定）
 
-现有通配符证书 `*.quanttide.com` 只覆盖一级子域，`project.cloud.quanttide.com` 为二级子域，需要单独证书：
+`project.cloud.quanttide.com` 为二级子域，现有 `*.quanttide.com` 通配符证书不覆盖，
+本次通过 acme.sh（DNS-01 验证，阿里云 DNS API 自动添加 TXT 记录）签发 Let's Encrypt 证书并绑定到 CDN。
 
-- 方式一（推荐）：在 CDN 控制台为 `project.cloud.quanttide.com` 申请/绑定免费证书（与 `data.cloud.quanttide.com` 等域名做法一致）
-- 方式二：通过 ZeroSSL 等签发包含 `project.cloud.quanttide.com` 的证书后，在控制台上传绑定
+证书有效期 90 天，需要续期。当前 acme.sh 安装在 `/tmp`（临时），后续应迁移到持久目录并配置自动续期：
 
-绑定完成后验证：`curl -I https://project.cloud.quanttide.com/`
+```bash
+# 迁移后重新签发/续期并绑定（示例）
+export Ali_Key=<AK> Ali_Secret=<SK>
+acme.sh --issue --dns dns_ali -d project.cloud.quanttide.com --server letsencrypt \
+  --home <持久目录>/acme.sh --config-home <持久目录>/acme.sh-data
+# 续期后需重新上传并绑定到 CDN（SetCdnDomainSSLCertificate）
+```
 
 ## CI 部署
 
