@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.quanttide.qtcloud_projects">
    <application
-        android:label="qtcloud_projects"
+        android:label="量潮项目云"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

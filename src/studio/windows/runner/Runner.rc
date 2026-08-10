@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.quanttide" "\0"
-            VALUE "FileDescription", "qtcloud_projects" "\0"
+            VALUE "FileDescription", "量潮项目云工作台" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "qtcloud_projects" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.quanttide. All rights reserved." "\0"
             VALUE "OriginalFilename", "qtcloud_projects.exe" "\0"
-            VALUE "ProductName", "qtcloud_projects" "\0"
+            VALUE "ProductName", "量潮项目云" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

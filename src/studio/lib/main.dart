@@ -4,12 +4,12 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'theme.dart';
 import 'router.dart';
 
-
 /// APP入口
 void main() async {
   /// 配置APP路由规则
   /// https://docs.flutter.dev/development/ui/navigation/url-strategies
   usePathUrlStrategy();
+
   /// 运行APP
   runApp(const QtCloudProjects());
 }
@@ -23,9 +23,11 @@ class QtCloudProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       /// APP标题
-      title: '量潮项目管理',
+      title: '量潮项目云',
+
       /// APP主题
       theme: defaultThemeData,
+
       /// 路由
       routerConfig: router,
     );

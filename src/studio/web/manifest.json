@@ -1,11 +1,11 @@
 {
-    "name": "qtcloud_projects",
-    "short_name": "qtcloud_projects",
+    "name": "量潮项目云",
+    "short_name": "量潮项目云",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "量潮项目管理云Flutter客户端",
+    "description": "量潮项目云工作台",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
